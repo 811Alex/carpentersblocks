@@ -319,7 +319,7 @@ public class BlockRegistry
         
         if(enableGarageDoor) 
         {
-        	registerItemBlockRender(blockCarpentersDoor);
+        	registerItemBlockRender(blockCarpentersGarageDoor);
         }
         
         if(enableGate) 

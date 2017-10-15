@@ -2,6 +2,7 @@ package com.carpentersblocks.block;
 
 import java.util.Random;
 
+import com.carpentersblocks.block.types.BlockFlowerpot;
 import com.carpentersblocks.util.registry.BlockRegistry;
 
 import net.minecraft.block.BlockFlowerPot;
@@ -14,11 +15,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
-public class BlockCarpentersFlowerPot extends BlockFlowerPot
+public class BlockCarpentersFlowerPot extends BlockFlowerpot
 { 
 	public BlockCarpentersFlowerPot(Material material)
 	{
-		super(); 
+		super(material);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(CONTENTS, BlockFlowerPot.EnumFlowerType.EMPTY) );
 	} 
 	
