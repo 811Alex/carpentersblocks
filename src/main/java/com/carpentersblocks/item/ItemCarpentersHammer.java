@@ -9,9 +9,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
 public class ItemCarpentersHammer extends Item implements ICarpentersHammer 
-{ 
-    public ItemCarpentersHammer() {}
-    
+{   
     @Override
     public void onHammerUse(World world, EntityPlayer entityPlayer, EnumHand hand) 
     {

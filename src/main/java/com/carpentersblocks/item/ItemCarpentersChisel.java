@@ -11,8 +11,6 @@ import net.minecraft.world.World;
 
 public class ItemCarpentersChisel extends Item implements ICarpentersChisel
 { 
-    public ItemCarpentersChisel() {}
-
     @Override
     public void onChiselUse(World world, EntityPlayer entityPlayer, EnumHand hand) 
     {

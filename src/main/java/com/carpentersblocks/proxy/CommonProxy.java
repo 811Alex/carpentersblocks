@@ -22,7 +22,7 @@ public class CommonProxy
     public void preInit(FMLPreInitializationEvent event, Configuration config) 
     {
     	CBConfig.config(config); 
-        BlockRegistry.preInit(event);
+        BlockRegistry.preInit();
         ItemRegistry.preInit(event);
         DesignHandler.preInit(event);        
     }

@@ -88,21 +88,16 @@ public class OverlayHandler
         switch (overlay) 
         {
             case GRASS:
-            	
             case SNOW:
-            	
             case HAY:
-            	
             case MYCELIUM:
                 return EnumFacing.UP.equals(facing);
-            case WEB:
-            	
+            
+            case WEB:	
             case VINE:
+            default:
                 return true;
-                
-            default: {}
         }
-        return true;
     }
 
     /**
@@ -150,10 +145,9 @@ public class OverlayHandler
                     		return SpriteRegistry.sprite_overlay_fast_grass_side;
                     	}
             	}
+            	
             case SNOW:
-            	
             case HAY:
-            	
             case MYCELIUM:
                 switch (facing) 
                 {
@@ -179,15 +173,13 @@ public class OverlayHandler
                                 return null;
                         }
                 }
+                
             case WEB:
-            	
             case VINE:
                 return BlockUtil.getParticleTexture(itemStack);
                 
-            default: 
-            {
+            default:
                 return null;
-            }
         }
     } 
 }

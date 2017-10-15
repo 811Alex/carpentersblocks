@@ -14,12 +14,9 @@ import javax.imageio.ImageIO;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.Level;
 
-import com.carpentersblocks.CarpentersBlocks;
 import com.carpentersblocks.CarpentersBlocksCachedResources;
 import com.carpentersblocks.Reference;
 import com.carpentersblocks.util.ModLogger;
-import com.carpentersblocks.util.registry.BlockRegistry;
-import com.carpentersblocks.util.registry.ItemRegistry;
 import com.carpentersblocks.util.registry.SpriteRegistry;
 
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
