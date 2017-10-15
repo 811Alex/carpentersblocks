@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.carpentersblocks.Reference;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockTorch;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -40,12 +41,13 @@ public class BlockCarpentersTorch extends BlockTorch
 			EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) 
 	{
 		if(hand == EnumHand.MAIN_HAND 
-				&& (heldItem.equals(Items.FLINT_AND_STEEL) || heldItem.equals(Blocks.TORCH)) 
+				&& (heldItem.equals(Items.FLINT_AND_STEEL) || Block.getBlockFromItem(heldItem.getItem()) instanceof BlockTorch) 
 				&& !state.getValue(LIT).booleanValue())
 		{
 			worldIn.setBlockState(pos, state.withProperty(LIT, true));
+			return true;
 		}
-		return true;
+		return false;
 	}
 	
 	@Override
@@ -56,7 +58,13 @@ public class BlockCarpentersTorch extends BlockTorch
 			super.randomDisplayTick(stateIn, worldIn, pos, rand);
 			if(worldIn.isRaining() && Reference.enableTorchWeatherEffects)
 			{
-				worldIn.setBlockState(pos, stateIn.withProperty(LIT, false));
+				BlockPos airCheck = pos;
+				while(worldIn.getBlockState(airCheck.up()).getBlock().equals(Blocks.AIR) && airCheck.getY() < worldIn.getHeight())
+				{
+					airCheck = airCheck.up();
+					if(airCheck.getY() == worldIn.getHeight())
+						worldIn.setBlockState(pos, stateIn.withProperty(LIT, false));
+				}
 			}
 		}
 	}
