@@ -1,6 +1,60 @@
 {
-    "parent": "carpentersblocks:block/trapdoor_open",
     "textures": {
-        "texture": "carpentersblocks:blocks/general/solid"
-    }
+        "0": "carpentersblocks:blocks/general/solid"
+    },
+    "elements": [
+        {
+            "name": "Bottom-half",
+            "from": [ 0.0, 0.0, 13.0 ],
+            "to": [ 16.0, 11.0, 16.0 ],
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 11.0 ] },
+                "east": { "texture": "#0", "uv": [ 0.0, 0.0, 3.0, 11.0 ] },
+                "south": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 11.0 ] },
+                "west": { "texture": "#0", "uv": [ 0.0, 0.0, 3.0, 11.0 ] },
+                "up": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 3.0 ] },
+                "down": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 3.0 ] }
+            }
+        },
+        {
+            "name": "Left-post",
+            "from": [ 0.0, 11.0, 13.0 ],
+            "to": [ 4.0, 13.0, 16.0 ],
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 0.0, 0.0, 4.0, 2.0 ] },
+                "east": { "texture": "#0", "uv": [ 0.0, 0.0, 3.0, 2.0 ] },
+                "south": { "texture": "#0", "uv": [ 0.0, 0.0, 4.0, 2.0 ] },
+                "west": { "texture": "#0", "uv": [ 0.0, 0.0, 3.0, 2.0 ] },
+                "up": { "texture": "#0", "uv": [ 0.0, 0.0, 4.0, 3.0 ] },
+                "down": { "texture": "#0", "uv": [ 0.0, 0.0, 4.0, 3.0 ] }
+            }
+        },
+        {
+            "name": "Right-post",
+            "from": [ 12.0, 11.0, 13.0 ],
+            "to": [ 16.0, 13.0, 16.0 ],
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 0.0, 0.0, 4.0, 2.0 ] },
+                "east": { "texture": "#0", "uv": [ 0.0, 0.0, 3.0, 2.0 ] },
+                "south": { "texture": "#0", "uv": [ 0.0, 0.0, 4.0, 2.0 ] },
+                "west": { "texture": "#0", "uv": [ 0.0, 0.0, 3.0, 2.0 ] },
+                "up": { "texture": "#0", "uv": [ 0.0, 0.0, 4.0, 3.0 ] },
+                "down": { "texture": "#0", "uv": [ 0.0, 0.0, 4.0, 3.0 ] }
+            }
+        },
+        {
+            "name": "Top-half",
+            "from": [ 0.0, 13.0, 13.0 ],
+            "to": [ 16.0, 16.0, 16.0 ],
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 3.0 ] },
+                "east": { "texture": "#0", "uv": [ 0.0, 0.0, 3.0, 3.0 ] },
+                "south": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 3.0 ] },
+                "west": { "texture": "#0", "uv": [ 0.0, 0.0, 3.0, 3.0 ] },
+                "up": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 3.0 ] },
+                "down": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 3.0 ] }
+            }
+        }
+    ]
 }
+
