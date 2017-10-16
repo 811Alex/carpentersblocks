@@ -1,10 +1,11 @@
 {
     "textures": {
+        "particle": "carpentersblocks:blocks/general/solid",
         "0": "carpentersblocks:blocks/general/solid"
     },
     "elements": [
         {
-            "name": "Closed-top",
+            "name": "OpenTop",
             "from": [ 0.0, 8.0, 13.0 ],
             "to": [ 16.0, 16.0, 16.0 ],
             "faces": {

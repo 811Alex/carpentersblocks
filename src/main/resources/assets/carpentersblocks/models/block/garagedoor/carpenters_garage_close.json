@@ -1,5 +1,6 @@
 {
     "textures": {
+        "particle": "carpentersblocks:blocks/general/solid",
         "0": "carpentersblocks:blocks/general/solid"
     },
     "elements": [

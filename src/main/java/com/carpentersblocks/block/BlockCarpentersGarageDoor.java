@@ -31,12 +31,16 @@ public class BlockCarpentersGarageDoor extends BlockCoverable
 {
 	private static final PropertyDirection FACING = BlockHorizontal.FACING;
 	private static final PropertyBool OPEN = PropertyBool.create("open");
-	
-	protected static final AxisAlignedBB EAST_CLOSED_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.1875D, 1.0D, 1.0D);
-    protected static final AxisAlignedBB WEST_CLOSED_AABB = new AxisAlignedBB(0.8125D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
-	protected static final AxisAlignedBB SOUTH_CLOSED_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 0.1875D);
-    protected static final AxisAlignedBB NORTH_CLOSED_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.8125D, 1.0D, 1.0D, 1.0D);
-    protected static final AxisAlignedBB TOP_AABB = new AxisAlignedBB(0.0D, 0.5D, 0.0D, 0.1875, 1.0D, 1);
+
+	private static final AxisAlignedBB EAST_CLOSED_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.1875D, 1.0D, 1.0D);
+    private static final AxisAlignedBB WEST_CLOSED_AABB = new AxisAlignedBB(0.8125D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+	private static final AxisAlignedBB SOUTH_CLOSED_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 0.1875D);
+    private static final AxisAlignedBB NORTH_CLOSED_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.8125D, 1.0D, 1.0D, 1.0D);
+    private static final AxisAlignedBB EAST_OPEN_AABB = new AxisAlignedBB(0.0D, 0.5D, 0.0D, 0.1875, 1.0D, 1.0D);
+	private static final AxisAlignedBB WEST_OPEN_AABB = new AxisAlignedBB(0.8125D, 0.5D, 0.0D, 1.0D, 1.0D, 1.0D);
+	private static final AxisAlignedBB SOUTH_OPEN_AABB = new AxisAlignedBB(0.0D, 0.5D, 0.0D, 1.0D, 1.0D, 0.1875D);
+	private static final AxisAlignedBB NORTH_OPEN_AABB = new AxisAlignedBB(0.0D, 0.5D, 0.8125D, 1.0D, 1.0D, 1.0D);
+
 	
 	public BlockCarpentersGarageDoor(Material material) 
 	{
@@ -62,7 +66,18 @@ public class BlockCarpentersGarageDoor extends BlockCoverable
 						return NORTH_CLOSED_AABB;
 			}
 		}
-		return TOP_AABB;
+		switch((EnumFacing)state.getValue(FACING))
+		{
+			case EAST:
+				return EAST_OPEN_AABB;
+			case WEST:
+				return WEST_OPEN_AABB;
+			case SOUTH:
+				return SOUTH_OPEN_AABB;
+			case NORTH:
+			default:
+				return NORTH_OPEN_AABB;
+		}
 	}  
 	
 	@Override
@@ -83,7 +98,18 @@ public class BlockCarpentersGarageDoor extends BlockCoverable
 						return NORTH_CLOSED_AABB;
 			}
 		}
-		return TOP_AABB;
+		switch((EnumFacing)state.getValue(FACING))
+		{
+		case EAST:
+			return EAST_OPEN_AABB;
+		case WEST:
+			return WEST_OPEN_AABB;
+		case SOUTH:
+			return SOUTH_OPEN_AABB;
+		case NORTH:
+		default:
+			return NORTH_OPEN_AABB;
+		}
 	}
 
 	@Override
@@ -148,7 +174,6 @@ public class BlockCarpentersGarageDoor extends BlockCoverable
 	
 	@Override
 	public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
-		// TODO Auto-generated method stub
 		super.breakBlock(worldIn, pos, state);
 	}
 	
